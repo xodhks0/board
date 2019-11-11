@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+url : <input type="text" id="url">
+<button onclick="doSend()">SEND</button>
+<div id="rDiv"></div>
+<script>
+const xhr = new XMLHttpRequest();
+var rDiv = document.getElementById('rDiv');
+function doSend(){
+	var url = document.getElementById('url').value;
+	// alert(xhr.readyState); -> 0 
+	xhr.open('GET',url);
+	// alert(xhr.readyState); -> 1 
+	xhr.onreadystatechange = function(e) { // on으로 시작되면 이벤트, 이벤트는 소문자를 사용
+		// alert(xhr.readyState); -> 2, 3, 4
+		if(xhr.readyState==4) {
+			if(xhr.status==200) {
+				rDiv.innerHTML = xhr.responseText;
+				// alert(xhr.responseText); // 성공시 리스폰해줌
+			} else {
+				rDiv.innerHTML = xhr.responseText;
+			}
+		}
+	}
+	xhr.send();
+}
+
+
+
+/* var a = '123'; // 변수
+a= '234';
+alert(a);
+
+const b = '123'; // 상수 자바=final
+b = '234';
+alert(b); */
+</script>
+</body>
+</html>

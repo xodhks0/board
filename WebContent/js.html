@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript</title>
+</head>
+<body>
+	<input type="number" id="num1">
+	<input type="number" id="num2">
+	<div id="div1"></div>
+	<button onclick="gugudan()">시작</button>
+	<script>
+/* 		function changeDiv() {
+			var divObj = document.getElementById("div1");
+			divObj.innerHTML = "수정 완료";
+		} */
+
+		/* 		var arr = [];
+		 for(var i=0; i<=100;i++) {
+		 if (i%2 == 0) {
+		 arr.push(0);
+		 } else {
+		 arr.push(i);
+		 }
+		 }
+		 console.log(arr); */
+		function gugudan() {
+			var str = '';
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			for (var i = 1; i <= num1; i++) {
+				str += i + '단 시작' + '<br>';
+				for (var j = 1; j <= num2; j++) {
+					str += i + 'X' + j + '=' + (i * j) + '<br>';
+				}
+			}document.getElementById("div1").innerHTML = str;
+		}
+		 
+
+
+		/* var a = 1;
+		var str = '1';
+		var arr = [ 1, 2, 3 ];
+		arr.push(4);
+		for (var i = 0; i < arr.length; i++) {
+			alert(arr[i]);
+		}
+		 console.log(arr);
+		 console.log(arr.indexOf(2));
+		 arr.splice(0,1);
+		 console.log(arr);
+		 alert(a==str); // 값이 같은지 비교 (dataType비교 X)
+		 alert(a===str); // dataType과 값을 둘다 비교
+		 alert(a!=str); // 값이 같은지 비교 (dataType비교 X)
+		 alert(a!==str); // dataType과 값을 둘다 비교 */
+		/* var test = 'abc';
+		test = changeDiv;
+		test(); */
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="number" id="num1">
+	<input type="number" id="num2">
+	<div id="div1"></div>
+	<button onclick="baseball()">시작</button>
+	<script>
+	function baseball() {
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+		var quiz = [];
+		var str = '';
+		for (i=0; i<3;i++) {
+			quiz[i] = Math.random();
+			str += quiz[i];
+			document.getElementById("div1").innerHTML = str;
+		}
+	
+			
+		
+	}
+	</script>
+</body>
+</html>
